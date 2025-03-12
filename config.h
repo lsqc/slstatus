@@ -62,11 +62,14 @@ static const char unknown_str[] = "n/a";
  *                                                     NULL on OpenBSD/FreeBSD
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
+ *
  */
+
 static const struct arg args[] = {
-    /* function format          argument */
-    { datetime,     "%s",               "%F %T" },
-    { run_command,  " | %s 🔈",	        "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'" },
-    { wifi_essid,   " |  %s ",         "wlp3s0" },
-    { battery_perc, " | bat: %s%% ",    "BAT0" },
+    /* function            format           argument */
+    { datetime,            "%s | ",            "%F %T" },
+    { cpu_perc,            "CPU: %s%% | ",     NULL    },
+    { ram_perc,            "RAM: %s%% | ",     NULL    },
+    { run_command,         "Vol: %s ",       "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'" },
 };
+
