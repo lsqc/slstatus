@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "n/ya";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -69,9 +69,9 @@ static const struct arg args[] = {
     /* function            format           argument */
     { datetime,            "%s | ",            "%F %T" },
     { cpu_perc,            "cpu: %s%% | ",     NULL    },
-    { wifi_essid,	   " %s | ",        "wlp3s0" },
+    { wifi_essid,	       " %s | ",        "wlp3s0" },
     { ram_perc,            "ram: %s%% | ",     NULL    },
-    { battery_perc,	   "bat: %s%% | ",    "BAT0" },
+    { battery_perc,	       "bat: %s%% | ",    "BAT0" },
     { run_command,         "vol: %s ",         "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'" },
 };
 
